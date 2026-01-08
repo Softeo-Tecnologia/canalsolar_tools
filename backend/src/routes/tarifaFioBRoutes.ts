@@ -21,16 +21,13 @@ type FioBData = {
   impacto_fiob: number;
 };
 
-let cachedData: FioBData[] | null = null;
 
 function loadData(): FioBData[] {
-  if (cachedData) return cachedData;
 
   const jsonPath = path.join(__dirname, '..', 'data', 'tusd_fiob.json');
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
-  cachedData = JSON.parse(rawData);
+  return JSON.parse(rawData);
 
-  return cachedData!;
 }
 
 // GET /api/tarifa-fio-b?q=<nome>
