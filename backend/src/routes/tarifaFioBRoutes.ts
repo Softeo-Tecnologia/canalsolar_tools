@@ -16,6 +16,9 @@ type FioBData = {
   sessenta_pct_fio_b: number;
   pct_sessenta_fio_b_tusd: number;
   custo_fio_b_100kwh: number;
+  te: number;
+  tusd_te: number;
+  impacto_fiob: number;
 };
 
 let cachedData: FioBData[] | null = null;
