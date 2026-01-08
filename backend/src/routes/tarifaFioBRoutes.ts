@@ -24,9 +24,8 @@ type FioBData = {
 
 function loadData(): FioBData[] {
 
-  const jsonPath = path.join(__dirname, '..', 'data', 'tusd_fiob.json');
+  const jsonPath = path.join(__dirname, '..', 'data', 'tusd_fiob_1.json');
   const rawData = fs.readFileSync(jsonPath, 'utf-8');
-  console.log('JSON PATH REAL:', jsonPath);
   return JSON.parse(rawData);
 
 }
