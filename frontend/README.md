@@ -243,3 +243,7 @@ npm run build
 **Versão**: 1.0.0  
 **Data**: Janeiro 2026
 
+
+
+
+

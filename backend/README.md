@@ -183,3 +183,7 @@ npm install
 **Versão**: 1.0.0  
 **Data**: Janeiro 2026
 
+
+
+
+
