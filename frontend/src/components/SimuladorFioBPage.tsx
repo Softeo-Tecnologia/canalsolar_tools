@@ -153,7 +153,7 @@ export default function SimuladorFioBPage() {
         name: nome,
         email: email,
         phone: whatsappNumbers,
-        concessionaria: selectedArea,
+        area_de_concessao: selectedArea,
         perfil: perfil,
         empresa: perfil === 'Integrador' ? empresa : '',
         cargo: perfil === 'Integrador' ? cargo : '',
@@ -333,10 +333,6 @@ export default function SimuladorFioBPage() {
                           >
                             <option value="" className="bg-slate-950 text-white">Selecione uma opção</option>
                             <option value="Sócio ou Fundador" className="bg-slate-950 text-white">Sócio ou Fundador</option>
-                            <option value="Presidente ou CEO" className="bg-slate-950 text-white">Presidente ou CEO</option>
-                            <option value="Vice-presidente ou C-Level" className="bg-slate-950 text-white">
-                              Vice-presidente ou C-Level
-                            </option>
                             <option value="Diretor" className="bg-slate-950 text-white">Diretor</option>
                             <option value="Gerente" className="bg-slate-950 text-white">Gerente</option>
                             <option value="Coordenador" className="bg-slate-950 text-white">Coordenador</option>
