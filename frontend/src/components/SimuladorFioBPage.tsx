@@ -150,14 +150,14 @@ export default function SimuladorFioBPage() {
       
       const payload = {
         identifier: 'simulador_fiob',
-        Nome: nome,
+        name: nome,
         email: email,
-        WhatsApp: whatsappNumbers,
+        phone: whatsappNumbers,
         concessionaria: selectedArea,
         perfil: perfil,
         empresa: perfil === 'Integrador' ? empresa : '',
         cargo: perfil === 'Integrador' ? cargo : '',
-        farturamento: perfil === 'Integrador' ? faturamento : '',
+        faturamento: perfil === 'Integrador' ? faturamento : '',
         pagina_conversao: 'Simulador Fio B',
         utm_source: utmParams.utm_source,
         utm_medium: utmParams.utm_medium,
@@ -434,7 +434,7 @@ export default function SimuladorFioBPage() {
 
                 <div className="bg-gradient-to-br from-primary-600/20 to-primary-800/20 border border-primary-400/30 rounded-xl p-6 mb-6">
                   <div className="text-center">
-                    <div className="text-white/60 text-sm mb-2">Impacto de 60% doFio B na Tarifa Total (2026)</div>
+                    <div className="text-white/60 text-sm mb-2">Impacto de 60% do Fio B na Tarifa Total (2026)</div>
                     <div className="text-white text-6xl font-bold tracking-tight">
                       {formatPct(calculatedValues?.pctSessentaFioBNaTarifa)}
                     </div>
