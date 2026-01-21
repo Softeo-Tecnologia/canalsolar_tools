@@ -54,6 +54,10 @@ export default function SimuladorFioBPage() {
   const [nome, setNome] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [email, setEmail] = useState('');
+  const [perfil, setPerfil] = useState('');
+  const [empresa, setEmpresa] = useState('');
+  const [cargo, setCargo] = useState('');
+  const [faturamento, setFaturamento] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -116,7 +120,12 @@ export default function SimuladorFioBPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!nome || !whatsapp || !email || !selectedArea) {
+    if (!nome || !whatsapp || !email || !selectedArea || !perfil) {
+      setSubmitError('Por favor, preencha todos os campos.');
+      return;
+    }
+
+    if (perfil === 'Integrador' && (!empresa || !cargo || !faturamento)) {
       setSubmitError('Por favor, preencha todos os campos.');
       return;
     }
@@ -146,6 +155,10 @@ export default function SimuladorFioBPage() {
         WhatsApp: whatsappNumbers,
         'Área de concessão': selectedArea,
         area_de_concessao: selectedArea,
+        'Eu sou': perfil,
+        'Nome da empresa': perfil === 'Integrador' ? empresa : '',
+        'Cargo na empresa': perfil === 'Integrador' ? cargo : '',
+        'Faturamento anual da empresa': perfil === 'Integrador' ? faturamento : '',
         'Página de conversão': 'Simulador Fio B',
         Cargo: '',
         'Há quanto tempo atua no setor fotovoltaico?': '',
@@ -274,9 +287,112 @@ export default function SimuladorFioBPage() {
                       />
                     </div>
 
+                    <div>
+                      <label className="block text-xs text-white/60 mb-1">Eu sou *</label>
+                      <select
+                        value={perfil}
+                        onChange={(e) => {
+                          const nextValue = e.target.value;
+                          setPerfil(nextValue);
+                          if (nextValue !== 'Integrador') {
+                            setEmpresa('');
+                            setCargo('');
+                            setFaturamento('');
+                          }
+                        }}
+                        className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                        disabled={submitting}
+                        required
+                      >
+                        <option value="" className="bg-slate-950 text-white">Selecione uma opção</option>
+                        <option value="Integrador" className="bg-slate-950 text-white">Integrador</option>
+                        <option value="Consumidor Final" className="bg-slate-950 text-white">Consumidor Final</option>
+                      </select>
+                    </div>
+
+                    {perfil === 'Integrador' && (
+                      <>
+                        <div>
+                          <label className="block text-xs text-white/60 mb-1">Nome da empresa *</label>
+                          <input
+                            type="text"
+                            value={empresa}
+                            onChange={(e) => setEmpresa(e.target.value)}
+                            placeholder="Nome da empresa"
+                            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                            disabled={submitting}
+                            required
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-xs text-white/60 mb-1">Qual o seu cargo na empresa? *</label>
+                          <select
+                            value={cargo}
+                            onChange={(e) => setCargo(e.target.value)}
+                            className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                            disabled={submitting}
+                            required
+                          >
+                            <option value="" className="bg-slate-950 text-white">Selecione uma opção</option>
+                            <option value="Sócio ou Fundador" className="bg-slate-950 text-white">Sócio ou Fundador</option>
+                            <option value="Presidente ou CEO" className="bg-slate-950 text-white">Presidente ou CEO</option>
+                            <option value="Vice-presidente ou C-Level" className="bg-slate-950 text-white">
+                              Vice-presidente ou C-Level
+                            </option>
+                            <option value="Diretor" className="bg-slate-950 text-white">Diretor</option>
+                            <option value="Gerente" className="bg-slate-950 text-white">Gerente</option>
+                            <option value="Coordenador" className="bg-slate-950 text-white">Coordenador</option>
+                            <option value="Supervisor" className="bg-slate-950 text-white">Supervisor</option>
+                            <option value="Analista" className="bg-slate-950 text-white">Analista</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label className="block text-xs text-white/60 mb-1">
+                            E qual o faturamento anual da sua empresa? *
+                          </label>
+                          <select
+                            value={faturamento}
+                            onChange={(e) => setFaturamento(e.target.value)}
+                            className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                            disabled={submitting}
+                            required
+                          >
+                            <option value="" className="bg-slate-950 text-white">Selecione uma opção</option>
+                            <option value="Ainda não faturamos" className="bg-slate-950 text-white">Ainda não faturamos</option>
+                            <option value="Até R$250 mil ao ano" className="bg-slate-950 text-white">Até R$250 mil ao ano</option>
+                            <option value="De R$250 mil a R$500 mil ao ano" className="bg-slate-950 text-white">
+                              De R$250 mil a R$500 mil ao ano
+                            </option>
+                            <option value="De R$500 mil a R$1 milhão ao ano" className="bg-slate-950 text-white">
+                              De R$500 mil a R$1 milhão ao ano
+                            </option>
+                            <option value="De R$1 milhão a R$5 milhões ao ano" className="bg-slate-950 text-white">
+                              De R$1 milhão a R$5 milhões ao ano
+                            </option>
+                            <option value="De R$5 a R$10 milhões ao ano" className="bg-slate-950 text-white">
+                              De R$5 a R$10 milhões ao ano
+                            </option>
+                            <option value="De R$10 a R$50 milhões ao ano" className="bg-slate-950 text-white">
+                              De R$10 a R$50 milhões ao ano
+                            </option>
+                          </select>
+                        </div>
+                      </>
+                    )}
+
                     <button
                       type="submit"
-                      disabled={submitting || !nome || !whatsapp || !email || !selectedArea}
+                      disabled={
+                        submitting ||
+                        !nome ||
+                        !whatsapp ||
+                        !email ||
+                        !selectedArea ||
+                        !perfil ||
+                        (perfil === 'Integrador' && (!empresa || !cargo || !faturamento))
+                      }
                       className="w-full py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-white/10 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-200"
                     >
                       {submitting ? 'Enviando...' : 'Ver resultados completos'}
@@ -393,6 +509,10 @@ export default function SimuladorFioBPage() {
                       setNome('');
                       setWhatsapp('');
                       setEmail('');
+                      setPerfil('');
+                      setEmpresa('');
+                      setCargo('');
+                      setFaturamento('');
                       setSubmitSuccess(false);
                       setSubmitError(null);
                     }}
