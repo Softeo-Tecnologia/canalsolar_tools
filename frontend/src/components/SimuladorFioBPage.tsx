@@ -198,7 +198,7 @@ export default function SimuladorFioBPage() {
       <div className="min-h-[100vh] bg-gradient-to-br from-primary-950 via-primary-900 to-black flex items-center justify-center px-4 py-10">
         <div className="w-full max-w-4xl">
           <div className="text-center">
-            <div className="text-white text-2xl sm:text-3xl font-semibold">Fio B na Tarifa de Energia</div>
+            <div className="text-white text-2xl sm:text-3xl font-semibold">Impacto do Fio B na Tarifa de Energia</div>
             <div className="text-white/60 text-sm mt-2">Base de dados ANEEL</div>          
           </div>
 
@@ -233,7 +233,7 @@ export default function SimuladorFioBPage() {
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label className="block text-xs text-white/60 mb-1">Área de concessão *</label>
+                      <label className="block text-xs text-white/60 mb-1">Concessionária de energia *</label>
                       <SearchableSelect
                         value={selectedArea}
                         onChange={setSelectedArea}
@@ -297,7 +297,7 @@ export default function SimuladorFioBPage() {
                             setFaturamento('');
                           }
                         }}
-                        className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                        className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
                         disabled={submitting}
                         required
                       >
@@ -327,7 +327,7 @@ export default function SimuladorFioBPage() {
                           <select
                             value={cargo}
                             onChange={(e) => setCargo(e.target.value)}
-                            className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
                             disabled={submitting}
                             required
                           >
@@ -352,7 +352,7 @@ export default function SimuladorFioBPage() {
                           <select
                             value={faturamento}
                             onChange={(e) => setFaturamento(e.target.value)}
-                            className="w-full px-4 py-2 bg-slate-950/80 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
+                            className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-primary-400/50 focus:ring-1 focus:ring-primary-400/50"
                             disabled={submitting}
                             required
                           >
@@ -409,7 +409,7 @@ export default function SimuladorFioBPage() {
                       📊 Resultado da Simulação
                     </div>
                     <div className="text-white/70 text-xs mb-4 text-center">
-                      Área de concessão atual: <span className="font-semibold">{selectedArea}</span>
+                      Concessionária de energia: <span className="font-semibold">{selectedArea}</span>
                     </div>
                     <div className="mb-4">
                       <label className="block text-xs text-white/60 mb-2">Trocar área de concessão</label>
