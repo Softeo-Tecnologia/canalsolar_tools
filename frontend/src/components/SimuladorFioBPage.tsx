@@ -32,15 +32,10 @@ function formatWhatsApp(value: string): string {
   return limited;
 }
 
-function getUTMParams(): Record<string, string> {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    utm_source: params.get('utm_source') || '',
-    utm_medium: params.get('utm_medium') || '',
-    utm_campaign: params.get('utm_campaign') || '',
-    utm_term: params.get('utm_term') || '',
-    utm_content: params.get('utm_content') || '',
-  };
+function getCookieValue(name: string): string {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = document.cookie.match(new RegExp(`(?:^|; )${escaped}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : '';
 }
 
 export default function SimuladorFioBPage() {
@@ -146,8 +141,6 @@ export default function SimuladorFioBPage() {
     setSubmitError(null);
 
     try {
-      const utmParams = getUTMParams();
-      
       const payload = {
         identifier: 'simulador_fiob',
         name: nome,
@@ -159,11 +152,7 @@ export default function SimuladorFioBPage() {
         cargo: perfil === 'Integrador' ? cargo : '',
         faturamento: perfil === 'Integrador' ? faturamento : '',
         pagina_conversao: 'Simulador Fio B',
-        utm_source: utmParams.utm_source,
-        utm_medium: utmParams.utm_medium,
-        utm_campaign: utmParams.utm_campaign,
-        utm_term: utmParams.utm_term,
-        utm_content: utmParams.utm_content,
+        traffic_source: getCookieValue('__trf.src') || ''
       };
 
       await axios.post(
