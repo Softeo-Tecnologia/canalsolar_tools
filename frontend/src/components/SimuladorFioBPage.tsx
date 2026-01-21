@@ -437,7 +437,7 @@ export default function SimuladorFioBPage() {
 
                 <div className="bg-gradient-to-br from-primary-600/20 to-primary-800/20 border border-primary-400/30 rounded-xl p-6 mb-6">
                   <div className="text-center">
-                    <div className="text-white/60 text-sm mb-2">Fio B na Tarifa Total (2026)</div>
+                    <div className="text-white/60 text-sm mb-2">Impacto de 60% doFio B na Tarifa Total (2026)</div>
                     <div className="text-white text-6xl font-bold tracking-tight">
                       {formatPct(calculatedValues?.pctSessentaFioBNaTarifa)}
                     </div>
