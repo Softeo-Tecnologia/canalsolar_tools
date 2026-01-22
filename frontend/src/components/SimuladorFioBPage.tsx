@@ -457,7 +457,7 @@ export default function SimuladorFioBPage() {
                     
                     <div className="text-center">
                       <button
-                        onClick={() => window.open('https://canalsolar.com.br/fiob.pdf', '_blank')}
+                        onClick={() => window.open('https://canalsolar.com.br/wp-content/uploads/2026/01/Ebook-FIo-B_Final_v5.pdf', '_blank')}
                         className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-base rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl w-full"
                       >
                         📥 DOWNLOAD E-BOOK
