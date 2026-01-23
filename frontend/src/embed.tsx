@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import SimuladorFioBPage from './components/SimuladorFioBPage.tsx'
+import SimuladorFioBPage from './LPs/SimuladorFioBPage.tsx'
 import './index.css'
 import { HelmetProvider } from 'react-helmet-async'
 

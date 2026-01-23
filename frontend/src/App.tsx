@@ -1,5 +1,6 @@
-import CursoOnlineHidrogenioVerdePage from './components/CursoOnlineHidrogenioVerdePage'
-import SimuladorFioBPage from './components/SimuladorFioBPage'
+import CursoHomerSamPage from './LPs/CursoHomerSamPage'
+import CursoOnlineHidrogenioVerdePage from './LPs/CursoOnlineHidrogenioVerdePage'
+import SimuladorFioBPage from './LPs/SimuladorFioBPage'
 
 type RouteEntry = {
   path: string
@@ -9,6 +10,7 @@ type RouteEntry = {
 const routes: RouteEntry[] = [
   { path: '/', element: <SimuladorFioBPage /> },
   { path: '/curso-online-hidrogenio-verde', element: <CursoOnlineHidrogenioVerdePage /> },
+  { path: '/curso-homer-sam', element: <CursoHomerSamPage /> },
 ]
 
 function normalizePath(pathname: string) {

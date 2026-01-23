@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { tarifaFioBService, FioBData } from '../services/tarifaFioBService';
-import SearchableSelect from './SearchableSelect';
+import SearchableSelect from '../components/SearchableSelect';
 import { Helmet } from 'react-helmet-async';
 import axios from 'axios';
 
