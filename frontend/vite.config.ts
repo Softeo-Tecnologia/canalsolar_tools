@@ -22,13 +22,13 @@ export default defineConfig({
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          // CSS do embed terá nome fixo para facilitar o carregamento
+          // CSS com hash para evitar problemas de cache
           if (assetInfo.name && assetInfo.name.endsWith('.css')) {
             if (assetInfo.names && assetInfo.names.some((name: string) => name.includes('embed'))) {
-              return 'assets/index.css';
+              return 'assets/embed-[hash].css';
             }
-            // CSS principal também terá nome fixo
-            return 'assets/index.css';
+            // CSS principal com hash
+            return 'assets/index-[hash].css';
           }
           return 'assets/[name]-[hash].[ext]';
         },

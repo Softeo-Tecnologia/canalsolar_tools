@@ -417,11 +417,55 @@ export default function SimuladorFioBPage() {
                   </div>
                 )}
 
-                <div className="bg-gradient-to-br from-primary-600/20 to-primary-800/20 border border-primary-400/30 rounded-xl p-6 mb-6">
-                  <div className="text-center">
-                    <div className="text-white/60 text-sm mb-2">Impacto de 60% do Fio B na Tarifa Total (2026)</div>
-                    <div className="text-white text-6xl font-bold tracking-tight">
-                      {formatPct(calculatedValues?.pctSessentaFioBNaTarifa)}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  {/* Impacto de 60% do Fio B */}
+                  <div className="bg-gradient-to-br from-primary-600/20 to-primary-800/20 border border-primary-400/30 rounded-xl p-6">
+                    <div className="text-center">
+                      <div className="text-white/60 text-sm mb-2">Impacto de 60% do Fio B na Tarifa Total (2026)</div>
+                      <div className="text-white/60 text-sm mb-2">Os calculos foram arredondados em duas casas decimais</div>
+                      <div className="text-white text-6xl font-bold tracking-tight">
+                        {formatPct(calculatedValues?.pctSessentaFioBNaTarifa)}
+                      </div>
+                      <div className="text-white text-sm mb-2">
+                
+                        </div>
+                    </div>
+                  </div>
+
+                  {/* E-book Download Section */}
+                  <div className="bg-gradient-to-br from-red-600/20 to-red-800/20 border border-red-600/30 rounded-xl p-6">
+                    <div className="text-center mb-4">
+                      <div className="text-4xl mb-3">📚</div>
+                      <h3 className="text-white text-xl font-bold mb-2">
+                        Entenda a teoria completa
+                      </h3>
+                      <p className="text-white/80 text-sm mb-4">
+                        Agora que você viu o impacto na prática, baixe gratuitamente o e-book do Canal Solar e entenda toda a teoria sobre o Fio B na Geração Distribuída em 2026.
+                      </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">📖</div>
+                        <p className="text-white/70 text-sm">Como funciona a cobrança</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">💰</div>
+                        <p className="text-white/70 text-sm">Impacto na sua conta</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-2xl mb-2">⚖️</div>
+                        <p className="text-white/70 text-sm">Regime de transição</p>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <button
+                        onClick={() => window.open('https://canalsolar.com.br/wp-content/uploads/2026/01/Ebook-FIo-B_Final_v5.pdf', '_blank')}
+                        className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-base rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl w-full"
+                      >
+                        📥 DOWNLOAD E-BOOK
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -479,9 +523,10 @@ export default function SimuladorFioBPage() {
                     Esta página utiliza dados da ANEEL extraídos em 08/01/2026. Os valores representam a componente
                     Fio B da TUSD para cada área de concessão de energia
                     elétrica do Brasil. O percentual de 60% do Fio B representa a parcela não compensável de energia injetada em 
-                    sistemas de geração distribuída a partir de 2026.
+                    sistemas de geração distribuída a partir de 2026. 
                   </div>
                 </div>
+
 
                 <div className="mt-6 text-center">
                   <button

@@ -2,13 +2,14 @@ import CursoHomerSamPage from './LPs/CursoHomerSamPage'
 import CursoOnlineHidrogenioVerdePage from './LPs/CursoOnlineHidrogenioVerdePage'
 import SimuladorFioBPage from './LPs/SimuladorFioBPage'
 
+
 type RouteEntry = {
   path: string
   element: JSX.Element
 }
 
 const routes: RouteEntry[] = [
-  { path: '/', element: <SimuladorFioBPage /> },
+  { path: '/calculadora', element: <SimuladorFioBPage /> },
   { path: '/curso-online-hidrogenio-verde', element: <CursoOnlineHidrogenioVerdePage /> },
   { path: '/curso-homer-sam', element: <CursoHomerSamPage /> },
 ]
@@ -20,7 +21,6 @@ function normalizePath(pathname: string) {
 function App() {
   const normalizedPath = normalizePath(window.location.pathname)
   const match = routes.find((route) => route.path === normalizedPath)
-  return match?.element ?? <SimuladorFioBPage />
 }
 
 export default App
