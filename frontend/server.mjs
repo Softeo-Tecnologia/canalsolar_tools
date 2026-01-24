@@ -93,7 +93,14 @@ if (!isProd) {
     walk(entry)
 
     const styleLinks = Array.from(styles)
-      .map((href) => `<link rel="stylesheet" href="/${href}">`)
+      .map((href) => {
+        const url = `/${href}`
+        return [
+          `<link rel="preload" href="${url}" as="style">`,
+          `<link rel="stylesheet" href="${url}" media="print" onload="this.media='all'">`,
+          `<noscript><link rel="stylesheet" href="${url}"></noscript>`,
+        ].join('')
+      })
       .join('')
     const fontLinks = Array.from(fonts)
       .map(
