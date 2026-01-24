@@ -364,18 +364,28 @@ export default function CursoOnlineHidrogenioVerdePage() {
           name="description"
           content="Curso online gravado sobre hidrogênio verde: tecnologias, custos, mercado e regulação no Brasil. 12h, acesso por 12 meses, testes por módulo e apostila técnica."
         />
+        <link rel="preconnect" href="https://cursos.canalsolar.com.br" />
+        <link rel="preconnect" href="https://bcb27500.delivery.rocketcdn.me" />
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preload" as="image" href={heroImageUrl} />
       </Helmet>
 
       <div className="min-h-screen bg-slate-950 text-white pb-28">
-        <section
-          className="bg-gradient-to-br from-primary-950 via-primary-900 to-slate-100"
-          style={{
-            backgroundImage: `linear-gradient(120deg, rgba(9, 13, 30, 0.92), rgba(9, 13, 30, 0)), url('${heroImageUrl}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-          }}
-        >
-          <div className="mx-auto max-w-6xl px-6 py-20">
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-primary-900 to-slate-100">
+          <img
+            src={heroImageUrl}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-primary-950/95 via-primary-900/85 to-slate-100/0"
+            aria-hidden="true"
+          />
+          <div className="relative mx-auto max-w-6xl px-6 py-20">
             <div className="flex items-center justify-between">
               <img
                 src={logoUrl}
@@ -383,6 +393,8 @@ export default function CursoOnlineHidrogenioVerdePage() {
                 width={140}
                 height={28}
                 className="h-5 w-auto"
+                loading="eager"
+                decoding="async"
               />            
             </div>
             <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
@@ -540,6 +552,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
                         alt={`Depoimento de ${testimonial.name}`}
                         className="aspect-[9/16] w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                       />
                     ) : (
                       <div className="aspect-[9/16] w-full bg-gradient-to-br from-slate-900 via-slate-950 to-black p-4">
@@ -660,6 +673,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
                   height={900}
                   className="h-full w-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
