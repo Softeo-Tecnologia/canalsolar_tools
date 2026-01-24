@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import express from 'express'
 import { existsSync, promises as fs } from 'node:fs'
 import path from 'node:path'
