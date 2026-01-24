@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { AboutCanalSolarSection, FooterCopyright, PricingSection } from '../components/CourseSections';
 
 const checkoutUrl = 'https://checkout.canalsolar.com.br/checkout/hidrogenio-verde';
 
@@ -678,53 +679,22 @@ export default function CursoOnlineHidrogenioVerdePage() {
           </div>
         </section>
 
-        <section id="comprar" className="mx-auto max-w-6xl px-6 py-16">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_24px_70px_-40px_rgba(15,23,42,0.9)]">
-            <div className="text-xs uppercase tracking-[0.3em] text-white/50">COMECE AGORA</div>
-            <h2 className="mt-3 text-2xl font-semibold">Acesso imediato ao curso completo</h2>
-            <p className="mt-3 text-sm text-white/70">
-              Liberação automática após o pagamento
-            </p>
-            <div className="mt-6 text-3xl font-semibold">12x de R$ 97,90</div>
-            <div className="mt-2 text-sm text-white/70">ou R$ 979,00 à vista</div>
-            <a
-              href={checkoutUrl}
-              className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-primary-400"
-            >
-              Comprar agora
-            </a>
-            <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs text-white/60">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 3v10l4 2" />
-                  <circle cx="12" cy="12" r="9" />
-                </svg>
-                Acesso imediato
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="4" y="11" width="16" height="9" rx="2" />
-                  <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                </svg>
-                Pagamento seguro
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="4" y="11" width="16" height="9" rx="2" />
-                  <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                </svg>
-                Garantia de 7 dias
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 7v5l3 3" />
-                </svg>
-                Suporte na plataforma
-              </span>
-            </div>
-          </div>
-        </section>
+        <PricingSection
+          id="comprar"
+          eyebrow="COMECE AGORA"
+          title="Acesso imediato ao curso completo"
+          description="Liberação automática após o pagamento"
+          installmentText="12x de R$ 97,90"
+          upfrontText="ou R$ 979,00 à vista"
+          ctaText="Comprar agora"
+          ctaHref={checkoutUrl}
+          badges={[
+            'Acesso imediato',
+            'Pagamento seguro',
+            'Garantia de 7 dias',
+            'Suporte na plataforma',
+          ]}
+        />
 
         <section className="mx-auto max-w-6xl px-6 py-14">
           <div className="text-center">
@@ -791,56 +761,9 @@ export default function CursoOnlineHidrogenioVerdePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pb-20">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.9)]">
-            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-              <div className="text-left">
-              
-                <div className="mt-4 text-xs uppercase tracking-[0.3em] text-white/50">Sobre o Canal Solar</div>
-                <h2 className="mt-3 text-2xl font-semibold">
-                  Maior plataforma multicanais de energias renováveis do mundo
-                </h2>
-                <p className="mt-3 text-sm text-white/70">
-                  Autoridade que forma profissionais e move o mercado. O Canal Solar conecta informação, educação e indústria,
-                  assumindo responsabilidade real pela capacitação que o setor precisa.
-                </p>
-                <div className="mt-6 text-xs text-white/50">
-                <img
-                  src="https://bcb27500.delivery.rocketcdn.me/wp-content/uploads/2024/05/LOGO-CANAL-SOLAR-VERSAO-4-copiar.webp"
-                  alt="Canal Solar"
-                  className="h-10"
-                  loading="lazy"
-                />
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="relative w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/80 via-slate-950/60 to-transparent px-8 py-10 text-center">
-                  <div className="text-xs uppercase tracking-[0.3em] text-white/60">Público único</div>
-                  <div className="mt-4 text-5xl font-semibold text-white sm:text-6xl">
-                    +26
-                    <span className="align-top text-xl font-semibold text-white/70 sm:text-2xl"> milhões</span>
-                  </div>
-                  <div className="mt-3 text-sm text-white/70">
-                    Pessoas impactadas com conteúdo técnico e educativo.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AboutCanalSolarSection />
 
-        <footer className="border-t border-white/10">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-10 text-center">
-            <img
-              src="https://cursos.canalsolar.com.br/wp-content/uploads/2025/03/CANAL-EDUCACIONAL-LOGO-VERSAO-2.png"
-              alt="Canal Solar Educacional"
-              className="h-10"
-              loading="lazy"
-            />
-            <div className="text-sm text-white/70">2026 © DIREITOS RESERVADOS</div>
-            <div className="text-xs text-white/60">CNPJ: 59.832.151/0001-59</div>
-          </div>
-        </footer>
+        <FooterCopyright />
 
         <div
           className={`fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-5xl rounded-2xl border border-white/10 bg-slate-950/95 px-4 py-3 shadow-[0_18px_50px_-30px_rgba(15,23,42,0.9)] backdrop-blur transition-all duration-500 ease-out ${
