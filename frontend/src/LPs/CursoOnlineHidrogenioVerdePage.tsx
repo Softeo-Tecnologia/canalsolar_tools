@@ -378,7 +378,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
           />
           <div
