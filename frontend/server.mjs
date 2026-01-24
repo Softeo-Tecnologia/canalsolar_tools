@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const port = Number(process.env.PORT) || 3000
+const port = Number(process.env.PORT) || 3004
 const root = __dirname
 const distClientIndex = path.resolve(root, 'dist/client/index.html')
 const isProd =
