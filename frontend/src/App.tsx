@@ -13,7 +13,7 @@ const routes: RouteEntry[] = [
   { path: '/', element: <LandingPage /> },
   { path: '/calculadora', element: <SimuladorFioBPage /> },
   { path: '/curso-online-hidrogenio-verde', element: <CursoOnlineHidrogenioVerdePage /> },
-  { path: '/curso-homer-sam', element: <CursoHomerSamPage /> },
+  { path: '/curso-online-homer-sam', element: <CursoHomerSamPage /> },
 ]
 
 function normalizePath(pathname: string) {
