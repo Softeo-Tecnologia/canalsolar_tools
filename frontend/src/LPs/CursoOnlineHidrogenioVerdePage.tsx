@@ -608,7 +608,11 @@ export default function CursoOnlineHidrogenioVerdePage() {
 
     
 
-        <section ref={modulesSectionRef} className="mx-auto max-w-6xl px-6 py-14">
+        <section
+          id="modulos"
+          ref={modulesSectionRef}
+          className="mx-auto max-w-6xl px-6 py-14"
+        >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold">Módulos do curso</h2>
@@ -651,7 +655,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 py-14">
+        <section id="certificado" className="mx-auto max-w-6xl px-6 py-14">
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
              
@@ -681,6 +685,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
         </section>
 
         <section
+          id="aplicativo"
           className="w-full px-6 py-14"
           style={{
             backgroundImage:
@@ -771,7 +776,7 @@ export default function CursoOnlineHidrogenioVerdePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pb-20">
+        <section id="faq" className="mx-auto max-w-6xl px-6 pb-20">
           <h2 className="text-2xl font-semibold">FAQ</h2>
           <div className="mt-6 space-y-3">
             {faqItems.map((item) => (
@@ -788,7 +793,9 @@ export default function CursoOnlineHidrogenioVerdePage() {
           </div>
         </section>
 
-        <AboutCanalSolarSection />
+        <div id="canal-solar">
+          <AboutCanalSolarSection />
+        </div>
 
         <FooterCopyright />
 
